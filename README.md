@@ -29,27 +29,27 @@ Before you begin, ensure you have met the following requirements:
 ~ SQLite (or another database if preferred)
 
 # Installation
-1.Clone the repository:
+1. Clone the repository:
 
 bash
 Copy code
 git clone https://github.com/yourusername/CoinTrack.git
 cd CoinTrack
 
-2.Create and activate a virtual environment:
+2. Create and activate a virtual environment:
 
 bash
 Copy code
 python3 -m venv venv
 source venv/bin/activate
 
-3.Install the required packages:
+3. Install the required packages:
 
 bash
 Copy code
 pip install -r requirements.txt
 
-4.Set up the database:
+4. Set up the database:
 
 bash
 Copy code
@@ -57,22 +57,22 @@ flask db init
 flask db migrate -m "Initial migration."
 flask db upgrade
 
-5.Run the application:
+5. Run the application:
 
 bash
 Copy code
 flask run
 
-6.Access the application:
+6. Access the application:
 Open your browser and go to http://127.0.0.1:5000
 
 # Usage
-# 1.Register a new account by clicking on the "Sign Up" link.
-# 2.Log in with your registered credentials.
-# 3.Add new income or expense entries through the dashboard.
-# 4.Categorize your transactions for better organization.
-# 5.View your financial data with interactive charts on the dashboard.
-# 6.Edit or delete entries as needed.
+ 1. Register a new account by clicking on the "Sign Up" link.
+ 2. Log in with your registered credentials.
+ 3. Add new income or expense entries through the dashboard.
+ 4. Categorize your transactions for better organization.
+ 5. View your financial data with interactive charts on the dashboard.
+ 6. Edit or delete entries as needed.
 
 # Contributing
 We welcome contributions! Please follow these steps to contribute:
