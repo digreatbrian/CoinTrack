@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.flash {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.flash.info {
+    background-color: #d9edf7;
+    color: #31708f;
+}
+
+.flash.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
