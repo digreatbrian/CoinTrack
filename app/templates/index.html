@@ -1,16 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Login</h2>
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    <div>
-        {{ form.email.label }}<br>
-        {{ form.email(size=32) }}<br>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
-    </div>
-    <div>
-        {{ form.submit() }}
-    </div>
-</form>
+<h1>Welcome to CoinTrack</h1>
+<p>Track your finances easily and efficiently.</p>
 {% endblock %}
