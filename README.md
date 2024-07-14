@@ -1,5 +1,8 @@
 # CoinTrack
 
-CoinTrack is a personal finance tracker designed to help you manage your income and expenses efficiently. With CoinTrack, you can easily keep track of your financial transactions, categorize your spending, and visualize your financial data through insightful charts.
+CoinTrack is a personal finance tracker designed to help you manage your income and expenses efficiently. With CoinTrack, you can easily keep track of your financial transactions, categorize your spending, and visualize your financial data through insightful charts
 
-# updating ...... in progress!
+Thank you !
+
+
+# updating ...... in progress!!!
