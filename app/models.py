@@ -11,7 +11,6 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
-    entries = db.relationship('Entry', backref='user', lazy=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -23,27 +22,43 @@ class User(UserMixin, db.Model):
         return f'<User {self.username}>'
 
 class Category(db.Model):
+    __tablename__ = 'categories'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     user = db.relationship('User', backref=db.backref('categories', lazy=True))
 
-class Income(db.Model):
+class Entry(db.Model):
+    __tablename__ = 'entries'
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
     amount = db.Column(db.Float, nullable=False)
-    source = db.Column(db.String(100), nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
-    category = db.relationship('Category', backref=db.backref('incomes', lazy=True))
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', backref=db.backref('incomes', lazy=True))
+    type = db.Column(db.String(50))
 
-class Expense(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    amount = db.Column(db.Float, nullable=False)
+    __mapper_args__ = {
+        'polymorphic_identity': 'entry',
+        'polymorphic_on': type
+    }
+
+    user = db.relationship('User', backref=db.backref('entries', lazy=True))
+    category = db.relationship('Category', backref=db.backref('entries', lazy=True))
+
+class Income(Entry):
+    __tablename__ = 'incomes'
+    id = db.Column(db.Integer, db.ForeignKey('entries.id'), primary_key=True)
+    source = db.Column(db.String(100), nullable=False)
+
+    __mapper_args__ = {
+        'polymorphic_identity': 'income',
+    }
+
+class Expense(Entry):
+    __tablename__ = 'expenses'
+    id = db.Column(db.Integer, db.ForeignKey('entries.id'), primary_key=True)
     description = db.Column(db.String(255))
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
-    category = db.relationship('Category', backref=db.backref('expenses', lazy=True))
-    date_added = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', backref=db.backref('expenses', lazy=True))
+
+    __mapper_args__ = {
+        'polymorphic_identity': 'expense',
+    }
