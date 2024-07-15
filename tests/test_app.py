@@ -1,24 +1,25 @@
 import unittest
 from app import create_app, db
-from app.models import Income, Expense, Category
+from app.models import User, Income, Expense, Category
+from datetime import datetime
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app()
-        self.app.config['TESTING'] = True
-        self.app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        self.app_context = self.app.app_context()
+        self.app_context.push()
         self.client = self.app.test_client()
 
-        with self.app.app_context():
-            db.create_all()
+        # Create a clean database
+        db.create_all()
 
     def tearDown(self):
-        with self.app.app_context():
-            db.session.remove()
-            db.drop_all()
+        db.session.remove()
+        db.drop_all()
+        self.app_context.pop()
 
     def test_add_income(self):
-        with self.app.app_context():
+        with self.client:
             category = Category(name='Salary')
             db.session.add(category)
             db.session.commit()
@@ -33,7 +34,7 @@ class AppTestCase(unittest.TestCase):
             self.assertIn(b'Income added successfully!', response.data)
 
     def test_add_expense(self):
-        with self.app.app_context():
+        with self.client:
             category = Category(name='Food')
             db.session.add(category)
             db.session.commit()
