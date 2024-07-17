@@ -20,9 +20,6 @@ def create_app():
     migrate.init_app(app, db)
     login_manager.init_app(app)
 
-    # Set login view for login_manager
-    login_manager.login_view = 'auth.login'
-
     # Import Blueprints
     from .main.routes import main as main_blueprint
     from .auth.routes import auth as auth_blueprint
