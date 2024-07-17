@@ -1,16 +1,14 @@
 import unittest
 from app import create_app, db
-from app.models import User, Income, Expense, Category
-from datetime import datetime
+from app.models import User, Category, Entry
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app()
-        self.app_context = self.app.app_context()
-        self.app_context.push()
+        self.app.config['TESTING'] = True
+        self.app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
         self.client = self.app.test_client()
 
-        # Create a clean database
         with self.app.app_context():
             db.create_all()
 
@@ -18,17 +16,48 @@ class AppTestCase(unittest.TestCase):
         with self.app.app_context():
             db.session.remove()
             db.drop_all()
-        self.app_context.pop()
 
     def test_add_income(self):
-        with self.client:
-            # Test your income addition logic
-            pass
+        with self.app.app_context():
+            # Create a category for income
+            category = Category(name='Salary')
+            db.session.add(category)
+            db.session.commit()
+
+            # Add an income entry
+            response = self.client.post('/income/add', data={
+                'amount': 1000,
+                'category_id': category.id,
+                'description': 'Monthly Salary'
+            })
+            self.assertEqual(response.status_code, 200)
+
+            # Verify the entry in the database
+            income_entry = Entry.query.filter_by(description='Monthly Salary').first()
+            self.assertIsNotNone(income_entry)
+            self.assertEqual(income_entry.amount, 1000)
+            self.assertEqual(income_entry.category_id, category.id)
 
     def test_add_expense(self):
-        with self.client:
-            # Test your expense addition logic
-            pass
+        with self.app.app_context():
+            # Create a category for expenses
+            category = Category(name='Food')
+            db.session.add(category)
+            db.session.commit()
+
+            # Add an expense entry
+            response = self.client.post('/expenses/add', data={
+                'amount': 100,
+                'category_id': category.id,
+                'description': 'Grocery Shopping'
+            })
+            self.assertEqual(response.status_code, 200)
+
+            # Verify the entry in the database
+            expense_entry = Entry.query.filter_by(description='Grocery Shopping').first()
+            self.assertIsNotNone(expense_entry)
+            self.assertEqual(expense_entry.amount, 100)
+            self.assertEqual(expense_entry.category_id, category.id)
 
 if __name__ == '__main__':
     unittest.main()
