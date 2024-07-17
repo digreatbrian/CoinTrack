@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
+# Initialize extensions
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
@@ -31,5 +32,15 @@ def create_app():
     app.register_blueprint(auth_blueprint)
     app.register_blueprint(income_blueprint)
     app.register_blueprint(expenses_blueprint)
+
+    # Additional setup
+    @login_manager.user_loader
+    def load_user(user_id):
+        from .models import User  # Import inside to avoid circular imports
+        return User.query.get(int(user_id))
+
+    # Set login view
+    login_manager.login_view = 'auth.login'
+    login_manager.login_message_category = 'info'
 
     return app
