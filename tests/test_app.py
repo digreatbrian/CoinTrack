@@ -19,8 +19,13 @@ class AppTestCase(unittest.TestCase):
 
     def test_add_income(self):
         with self.app.app_context():
+            # Create a user
+            user = User(username='testuser', email='test@example.com', password='password')
+            db.session.add(user)
+            db.session.commit()
+
             # Create a category for income
-            category = Category(name='Salary')
+            category = Category(name='Salary', user_id=user.id)
             db.session.add(category)
             db.session.commit()
 
@@ -40,8 +45,13 @@ class AppTestCase(unittest.TestCase):
 
     def test_add_expense(self):
         with self.app.app_context():
+            # Create a user
+            user = User(username='testuser', email='test@example.com', password='password')
+            db.session.add(user)
+            db.session.commit()
+
             # Create a category for expenses
-            category = Category(name='Food')
+            category = Category(name='Food', user_id=user.id)
             db.session.add(category)
             db.session.commit()
 
