@@ -8,9 +8,11 @@ db = SQLAlchemy()
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
+    username = db.Column(db.String(150), unique=True, nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password_hash = db.Column(db.String(150), nullable=False)
+
+    categories = db.relationship('Category', backref='user', lazy=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -26,15 +28,20 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    user = db.relationship('User', backref=db.backref('categories', lazy=True))
+
+    entries = db.relationship('Entry', backref='category', lazy=True)
+
+    def __repr__(self):
+        return f'<Category {self.name}>'
 
 class Entry(db.Model):
     __tablename__ = 'entries'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
     amount = db.Column(db.Float, nullable=False)
-    date_added = db.Column(db.DateTime, default=datetime.utcnow)
+    description = db.Column(db.String(255))
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    category_id = db.Column(db.Integer, db.ForeignKey('categories.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     type = db.Column(db.String(50))
 
     __mapper_args__ = {
@@ -42,8 +49,8 @@ class Entry(db.Model):
         'polymorphic_on': type
     }
 
-    user = db.relationship('User', backref=db.backref('entries', lazy=True))
-    category = db.relationship('Category', backref=db.backref('entries', lazy=True))
+    def __repr__(self):
+        return f'<Entry {self.amount} {self.description}>'
 
 class Income(Entry):
     __tablename__ = 'incomes'
