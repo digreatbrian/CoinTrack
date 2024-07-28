@@ -33,6 +33,9 @@ def create_app():
     app.register_blueprint(income_blueprint)
     app.register_blueprint(expenses_blueprint)
 
+    # Import models
+    from app import models
+
     # Additional setup
     @login_manager.user_loader
     def load_user(user_id):
