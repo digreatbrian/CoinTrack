@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoinTrack</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <nav>
@@ -12,8 +12,8 @@
             <li><a href="{{ url_for('main.index') }}">Home</a></li>
             {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
-                <li><a href="{{ url_for('income_list') }}">Incomes</a></li>
-                <li><a href="{{ url_for('expense_list') }}">Expenses</a></li>
+                <li><a href="{{ url_for('main.income_list') }}">Incomes</a></li>
+                <li><a href="{{ url_for('main.expense_list') }}">Expenses</a></li>
                 <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
             {% else %}
                 <li><a href="{{ url_for('main.login') }}">Login</a></li>

@@ -9,12 +9,13 @@ migrate = Migrate()
 login_manager = LoginManager()
 
 def create_app():
+    from config import Config
     app = Flask(__name__)
 
     # Configuration
-    app.config['SECRET_KEY'] = 'your_secret_key'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///your_database.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = Config.SECRET_KEY
+    app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = Config.SQLALCHEMY_TRACK_MODIFICATIONS
 
     # Initialize plugins
     db.init_app(app)
@@ -22,20 +23,11 @@ def create_app():
     login_manager.init_app(app)
 
     # Import Blueprints
-    from .main.routes import main as main_blueprint
-    from .auth.routes import auth as auth_blueprint
-    from .income.routes import income as income_blueprint
-    from .expenses.routes import expenses as expenses_blueprint
+    from .routes import main as main_blueprint
 
     # Register Blueprints
     app.register_blueprint(main_blueprint)
-    app.register_blueprint(auth_blueprint)
-    app.register_blueprint(income_blueprint)
-    app.register_blueprint(expenses_blueprint)
-
-    # Import models
-    from app import models
-
+    
     # Additional setup
     @login_manager.user_loader
     def load_user(user_id):
@@ -43,7 +35,7 @@ def create_app():
         return User.query.get(int(user_id))
 
     # Set login view
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = 'main.login'
     login_manager.login_message_category = 'info'
 
     return app

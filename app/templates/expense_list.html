@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Expense List</h2>
-<a href="{{ url_for('add_expense') }}">Add Expense</a>
+<a href="{{ url_for('main.add_expense') }}">Add Expense</a>
 <ul>
     {% for expense in expenses %}
         <li>{{ expense.description }}: ${{ expense.amount }} - {{ expense.category.name }} ({{ expense.date_added.strftime('%Y-%m-%d') }})
-            <a href="{{ url_for('edit_expense', id=expense.id) }}">Edit</a>
+            <a href="{{ url_for('main.edit_expense', id=expense.id) }}">Edit</a>
             <form action="{{ url_for('delete_expense', id=expense.id) }}" method="post" style="display:inline;">
                 <input type="submit" value="Delete">
             </form>
