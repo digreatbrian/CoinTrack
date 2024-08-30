@@ -77,16 +77,10 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 ## 📧 Contact
 
-For any questions or suggestions, feel free to reach out to us at [digreatbrian@gmail.com](mailto:digreatbrian@cointrack.com) or misheckgogo@gmail.com](mailto:misheckgogo@cointrack.com.
+For any questions or suggestions, feel free to reach out to us at [digreatbrian@gmail.com](mailto:digreatbrian@cointrack.com) or [misheckgogo45@gmail.com](mailto:misheckgogo45@gmail.com)
 
 ---
 
 ## ⭐️ Show Your Support
 
 If you like CoinTrack, please give us a ⭐️ on [GitHub](https://github.com/digreatbrian/CoinTrack.git)!
-
----
-
-![Footer Image](https://via.placeholder.com/728x90.png?text=Thank+You+for+Using+CoinTrack)
----
-
