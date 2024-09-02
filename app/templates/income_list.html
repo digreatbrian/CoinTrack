@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Income List</h2>
-<a href="{{ url_for('add_income') }}">Add Income</a>
+<a href="{{ url_for('main.add_income') }}">Add Income</a>
 <ul>
     {% for income in incomes %}
         <li>{{ income.source }}: ${{ income.amount }} - {{ income.category.name }} ({{ income.date_added.strftime('%Y-%m-%d') }})

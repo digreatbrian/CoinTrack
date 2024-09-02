@@ -64,7 +64,6 @@ class Income(Entry):
 class Expense(Entry):
     __tablename__ = 'expenses'
     id = db.Column(db.Integer, db.ForeignKey('entries.id'), primary_key=True)
-    description = db.Column(db.String(255))
 
     __mapper_args__ = {
         'polymorphic_identity': 'expense',
