@@ -1,6 +1,7 @@
 import unittest
 from app import create_app, db
-from app.models import User, Category, Entry
+from app.models import User, FinanceEntry
+
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
@@ -24,24 +25,18 @@ class AppTestCase(unittest.TestCase):
             db.session.add(user)
             db.session.commit()
 
-            # Create a category for income
-            category = Category(name='Salary', user_id=user.id)
-            db.session.add(category)
-            db.session.commit()
-
             # Add an income entry
             response = self.client.post('/income/add', data={
                 'amount': 1000,
-                'category_id': category.id,
+                'category': 'Salary',
                 'description': 'Monthly Salary'
             })
             self.assertEqual(response.status_code, 200)
 
             # Verify the entry in the database
-            income_entry = Entry.query.filter_by(description='Monthly Salary').first()
+            income_entry = FinanceEntry.query.filter_by(description='Monthly Salary').first()
             self.assertIsNotNone(income_entry)
             self.assertEqual(income_entry.amount, 1000)
-            self.assertEqual(income_entry.category_id, category.id)
 
     def test_add_expense(self):
         with self.app.app_context():
@@ -50,24 +45,19 @@ class AppTestCase(unittest.TestCase):
             db.session.add(user)
             db.session.commit()
 
-            # Create a category for expenses
-            category = Category(name='Food', user_id=user.id)
-            db.session.add(category)
-            db.session.commit()
-
             # Add an expense entry
             response = self.client.post('/expenses/add', data={
                 'amount': 100,
-                'category_id': category.id,
+                'category': 'Food',
                 'description': 'Grocery Shopping'
             })
             self.assertEqual(response.status_code, 200)
 
             # Verify the entry in the database
-            expense_entry = Entry.query.filter_by(description='Grocery Shopping').first()
+            expense_entry = FinanceEntry.query.filter_by(description='Grocery Shopping').first()
             self.assertIsNotNone(expense_entry)
             self.assertEqual(expense_entry.amount, 100)
-            self.assertEqual(expense_entry.category_id, category.id)
+
 
 if __name__ == '__main__':
     unittest.main()

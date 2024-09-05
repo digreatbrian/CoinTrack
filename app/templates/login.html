@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Login</h2>
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    <div>
-        {{ form.email.label }}<br>
-        {{ form.email(size=32) }}<br>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
+    <div id="login-container" class="register-login-container">
+        <h2>Login</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32, placeholder="Enter email") }}<br>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32, placeholder="Enter password") }}<br>
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
     </div>
-    <div>
-        {{ form.submit() }}
-    </div>
-</form>
 {% endblock %}

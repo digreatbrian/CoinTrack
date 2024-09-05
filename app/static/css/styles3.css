@@ -1,0 +1,97 @@
+/* DASHBOARD */
+#dashboard-content #financial-overview-heading {
+    box-shadow: var(--theme-color);
+    background-color: var(--theme-secondary-color);
+    border-radius: var(--border-radius);
+    width: fit-content;
+    padding: 5px;
+    font-family: system-ui;
+    margin-top: 20px;
+}
+
+#dashboard-content #statistical-tiles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+}
+
+.statistical-tile {
+    background-color: var(--theme-opposite-color);
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    color: var(--theme-color);
+    margin: 10px;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 15px 3px var(--theme-color);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistical-tile.good-statistical-tile {
+    background-color: var(--success-lighter-color);
+}
+
+.statistical-tile.bad-statistical-tile {
+    background-color: var(--error-lighter-color);
+}
+
+.statistical-tile h3 {
+    font-size: 1.5em;
+    font-family: system-ui;
+    color: var(--theme-secondary-color);
+    text-shadow: 0 0 1px var(--theme-color);
+}
+
+.statistical-tile .heading {
+    font-size: 2em;
+    font-family: system-ui;
+    color: var(--theme-color);
+}
+
+.statistical-tile .subheading-with-bg {
+    font-size: 1.5em;
+    font-family: system-ui;
+    color: var(--theme-opposite-color);
+    background-color: var(--theme-secondary-color);
+    padding: 5px;
+    border-radius: var(--border-radius);
+}
+
+.statistical-tile .bad-subheading {
+    background-color: var(--error-color);
+}
+
+@media screen and (max-width: 768px) {
+    #dashboard-content #statistical-tiles {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .statistical-tile {
+        width: 45%;
+    }
+
+    .finance-entry-item {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .statistical-tile {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .statistical-tile {
+        width: 95%;
+    }
+}
+

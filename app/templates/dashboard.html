@@ -1,6 +1,90 @@
 {% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles3.css') }}">
+{% endblock %}
+
+{% block title %}Dashboard{% endblock %}
+
 {% block content %}
-<h2>Dashboard</h2>
-<p>Welcome, {{ current_user.username }}!</p>
-<p>Here you can track your finances and view your financial overview.</p>
+    <div id="dashboard-container">
+        <div id="dashboard-header">
+            <h1>Dashboard</h1>
+            <p>Welcome, {{ current_user.username }}!</p>
+            <p>Here you can track your finances and view your financial overview.</p>
+        </div>
+        <br>
+        <div id="dashboard-content">
+            <h2 id="financial-overview-heading">Financial Overview</h2>
+            <p>Here you can view your financial overview.</p>
+
+            {# Add statistical tiles here #}
+            <div id="statistical-tiles">
+                <div class="statistical-tile good-statistical-tile">
+                    <h3>Income</h3>
+                    <p class="heading">{{ income }}</p>
+                </div>
+
+                <div class="statistical-tile bad-statistical-tile">
+                    <h3>Expenses</h3>
+                    <p class="heading">{{ expenses }}</p>
+                </div>
+
+                <div class="statistical-tile {% if net_worth_status=='positive' %}good-statistical-tile{% elif net_worth!='neutral' %}bad-statistical-tile{% endif %}">
+                    <h3>Net Worth</h3>
+                    <p class="heading">{{ net_worth }}</p>
+                </div>
+
+                <div class="statistical-tile {% if debt_to_income_ratio_status=='positive' %}good-statistical-tile{% elif debt_to_income_ratio_status!='neutral' %}bad-statistical-tile{% endif %}">
+                    <h3>Debt To Income Ratio</h3>
+                    <p class="heading">{{ debt_to_income_ratio }}</p>
+                </div>
+
+                <div class="statistical-tile {% if savings_rate_status=='positive' %}good-statistical-tile{% elif savings_rate!='neutral' %}bad-statistical-tile{% endif %}">
+                    <h3>Savings Rate</h3>
+                    <p class="heading">{{ savings_rate }}</p>
+                </div>
+
+                <div class="statistical-tile {% if financial_progress_status=='positive' %}good-statistical-tile{% elif financial_progress_status!='neutral' %}bad-statistical-tile{% endif %}">
+                    <h3>Financial Progress</h3>
+                    <p class="heading">{{ financial_progress }}</p>
+                    <br>
+                    <p class="heading">{{ financial_progress_percentage }}</p>
+
+                </div>
+
+                <div class="statistical-tile">
+                    <h3>Dominant Allocation</h3>
+                    {% if dominant_expense %}
+                        <p class="heading">Expenses</p>
+                        <p class="subheading-with-bg bad-subheading">{{ dominant_expense }} ({{ dominant_expense_percentage }})</p>
+                    {% else %}
+                        <p class="heading">Expenses</p>
+                        <p class="subheading-with-bg">No dominant category</p>
+                    {% endif %}
+                    {# show dominant total expenses #}
+                    {% if dominant_expense_amount %}
+                        <p>Total {{dominant_expense}} amount: <span class="error-color">{{ dominant_expense_amount }}</span></p>
+                    {% endif %}
+
+                    <br>
+
+                    {% if dominant_income %}
+                        <p class="heading">Income</p>
+                        <p class="subheading-with-bg">{{ dominant_income }} ({{ dominant_income_percentage }})</p>
+                    {% else %}
+                        <p class="heading">Income</p>
+                        <p class="subheading-with-bg">No dominant category</p>
+                    {% endif %}
+                    {# show dominant total income #}
+                    {% if dominant_income_amount %}
+                        <p>Total {{ dominant_income }} amount: <span class="success-color">{{ dominant_income_amount }}</span></p>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}

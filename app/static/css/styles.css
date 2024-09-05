@@ -1,24 +1,65 @@
+/* define global styling */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    --theme-color: #191a19;
+    --theme-opposite-color: #f4f4f4;
+    --theme-secondary-color: #007bff;
+    --theme-secondary-opposite-color: #f4f4f4;
+    --error-color: #dc3545;
+    --error-lighter-color: #f8d7da;
+    --success-color: #28a745;
+    --success-lighter-color: #d4edda;
+    --info-color: #17a2b8;
+    --border-radius: 0.25rem;
+    --black: #191a19;
+}
+
+
+.theme-color {
+    color: var(--theme-color);
+}
+
+.theme-secondary-color {
+    color: var(--theme-secondary-color);
+}
+
+.theme-opposite-color {
+    color: var(--theme-opposite-color);
+}
+
+.theme-secondary-opposite-color {
+    color: var(--theme-secondary-opposite-color);
+}
+
+.error-bg {
+    background-color: var(--error-color);
 }
 
 nav {
-    background-color: #333;
-    color: white;
+    color: var(--theme-opposite-color);
     padding: 1rem;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: var(--theme-opposite-color);
     margin: 0 1rem;
     text-decoration: none;
 }
 
-nav a:hover {
+.nav-item:hover {
     text-decoration: underline;
+}
+
+.nav-item a:hover {
+    color: var(--theme-secondary-color);
+}
+
+.navbar-toggler-icon {
+    color: var(--theme-opposite-color);
 }
 
 .container {
@@ -29,14 +70,119 @@ nav a:hover {
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 0.5rem;
+    background-color: var(--info-color);
 }
 
-.flash.info {
-    background-color: #d9edf7;
-    color: #31708f;
+.flash.alert-info {
+    background-color: var(--theme-color);
+    color: var(--info-color);
 }
 
-.flash.error {
-    background-color: #f2dede;
-    color: #a94442;
+.flash.alert-error {
+    color: var(--theme-color);
+    background-color: var(--error-color);
+}
+
+.flash.alert-success {
+    background-color: var(--theme-color);
+    color: var(--success-color);
+}
+
+.error-color {
+    color: var(--error-color);
+}
+
+.success-color {
+    color: var(--success-color);
+}
+
+/* define specific elements styling */
+main#main {
+    background-image: url("../images/bg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#introduction {
+    opacity: .65;
+    padding: 5px;
+    border: 1px solid var(--theme-opposite-color);
+    border-radius: var(--border-radius);
+    text-shadow: #191a19;
+}
+
+#login-register-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    flex-direction: column;
+}
+
+#login-register-buttons .button {
+    font-size: xx-large;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--theme-secondary-color);
+    color: var(--theme-secondary-opposite-color);
+    font-family: monospace;
+    padding: 5px 10px;
+}
+
+#login-register-buttons #or-statement {
+    margin: 1rem;
+    color: var(--theme-opposite-color);
+    font-size: larger;
+    font-family: system-ui;
+}
+
+#description {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    color: var(--theme-opposite-color);
+    background-color: var(--black);
+    padding: 1rem;
+    font-size: larger;
+    font-family: system-ui;
+    width: 60%;
+    border-radius: var(--border-radius);
+}
+
+#description #intro {
+    margin-top: 0;
+    padding: 20px;
+}
+
+#description #key-features {
+    margin-top: 0;
+    padding: 20px;
+}
+
+.footer {
+    background-color: var(--theme-color);
+    color: var(--theme-opposite-color);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+ul {
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    #description {
+        width: 95%;
+    }
 }
