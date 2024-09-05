@@ -1,5 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Welcome to CoinTrack</h1>
-<p>Track your finances easily and efficiently.</p>
+    <div id="introduction">
+        <h1 class="theme-opposite-color text-center"><span id="greeting"></span>, Welcome to CoinTrack!</h1>
+        <p class="theme-opposite-color text-center">Track your finances easily and efficiently.</p>
+    </div>
+
+    <div id="login-register-buttons" >
+        {% if not current_user.is_authenticated %}
+            <button id="register" class="button" type="button">REGISTER</button>
+            <div id="or-statement">or</div>
+            <button id="login" class="button" type="button">LOGIN</button>
+        {% else %}
+            <div id="dashboard-link">
+                <a href="{{ url_for('main.dashboard') }}" class="button">Go to Dashboard</a>
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div id="description">
+        <h2>About CoinTrack</h2>
+        <p id="intro">CoinTrack is your ultimate tool for tracking incomes and expenses.
+                Our platform allows you to manage your finances with ease and efficiency.
+                Whether you are an individual or a business,
+                CoinTrack provides the features you need to stay on top of your financial health.
+        </p>
+
+        <h2 id="key-features">Key features</h2>
+        <ul>
+            <li>Track incomes and expenses</li>
+            <li>Generate detailed financial reports</li>
+            <li>Set financial goals and monitor progress</li>
+            <li>Secure and user-friendly interface</li>
+            <li>Customizable categories for better organization</li>
+            <li>Real-time updates and notifications</li>
+            <li>Multi-currency support</li>
+            <li>Data export options for further analysis</li>
+        </ul>
+        <a href="{{ url_for('main.register') }}">Join CoinTrack today and take control of your finances!</a>
+    </div>
+
+    <script>
+        // Dynamic greeting message
+        function getGreeting() {
+            const now = new Date();
+            const hours = now.getHours();
+            if (hours < 12) {
+                return "Good Morning";
+            } else if (hours < 18) {
+                return "Good Afternoon";
+            } else {
+                return "Good Evening";
+            }
+        }
+        $('#greeting').text(getGreeting());
+
+        // function to navigate to login page or registration page
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
+
+        $('#login-register-buttons #login').click(function() {
+            navigateToPage("{{ url_for('main.login') }}");
+        });
+
+        $('#login-register-buttons #register').click(function() {
+            navigateToPage("{{ url_for('main.register') }}");
+        });
+</script>
+
 {% endblock %}

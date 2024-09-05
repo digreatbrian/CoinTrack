@@ -1,0 +1,134 @@
+.register-login-container h2 {
+    color: var(--theme-opposite-color);
+}
+
+.register-login-container form {
+    padding: 20px;
+    font-size: larger;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-opposite-color);
+}
+
+.register-login-container form input {
+    padding: 5px;
+    margin: 10px 5px 5px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-opposite-color);
+    background-color: var(--theme-opposite-color);
+    color: var(--theme-color);
+    font-size: 1.01em;
+    height: 70px;
+    width: -webkit-fill-available;
+}
+
+.register-login-container form input[type=submit] {
+    background-color: var(--theme-secondary-color);
+    border:none;
+    padding: 10px 20px;
+    font-family: system-ui;
+    color: var(--theme-secondary-opposite-color)
+}
+
+.register-login-container form label {
+    padding: 5px;
+    margin: 10px 5px 5px;
+    color: var(--theme-opposite-color);
+}
+
+
+.register-login-container.big-form-container {
+    width: 90vw;
+}
+
+.register-login-container.big-form-container input{
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+
+.register-login-container #category, #source{
+    height: 100px;
+    padding: 5px;
+    width: auto;
+    font-size: larger;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-opposite-color);
+    background-color: var(--theme-opposite-color);
+}
+
+
+/* LOGIN FORM */
+.register-login-container#login-container form {
+    height: 50vh;
+}
+
+.register-login-container {
+    width: 90vw;
+}
+
+.register-login-container form input.error-color {
+    background-color: red;
+}
+
+
+/* FINANCE-LIST ITEMS */
+.finance-entry-item {
+    background-color: var(--theme-opposite-color);
+    padding: 10px;
+    text-align: center;
+    color: var(--theme-color);
+    margin: 15px 10px;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 15px 3px var(--theme-color);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.finance-entry-item a{
+    color: var(--theme-secondary-color);
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.finance-entry-item h2 {
+    color: var(--theme-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-color);
+    padding: 10px 15px;
+}
+
+.finance-entry-item p {
+    color: var(--theme-color);
+}
+
+.finance-entry-item .amount {
+    font-size: 2rem;
+}
+
+.finance-entry-item .date {
+    font-size: 1rem;
+}
+
+.finance-entry-item .description {
+    font-size: 1.3rem;
+    color: var(--theme-secondary-color);
+    opacity: .8;
+}
+
+@media screen and (max-width: 480px) {
+    .finance-entry-item, .register-login-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .finance-entry-item {
+        width: 95%;
+    }
+}
+
+

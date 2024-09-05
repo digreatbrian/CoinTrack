@@ -1,15 +1,26 @@
 {% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/finance_entry.css') }}">
+{% endblock %}
+
 {% block content %}
-<h2>Expense List</h2>
-<a href="{{ url_for('main.add_expense') }}">Add Expense</a>
-<ul>
-    {% for expense in expenses %}
-        <li>{{ expense.description }}: ${{ expense.amount }} - {{ expense.category.name }} ({{ expense.date_added.strftime('%Y-%m-%d') }})
-            <a href="{{ url_for('main.edit_expense', id=expense.id) }}">Edit</a>
-            <form action="{{ url_for('delete_expense', id=expense.id) }}" method="post" style="display:inline;">
-                <input type="submit" value="Delete">
-            </form>
-        </li>
-    {% endfor %}
-</ul>
+    <div id="expenses-container" class="register-login-container">
+        <h2>Expense List</h2>
+        <a href="{{ url_for('main.add_expense') }}">Add Expense</a>
+        <ul>
+            {% for expense in expenses %}
+                <li class="finance-entry-item">
+                    <h2 class="heading">{{ expense.category }}</h2>
+                    <h3 class="amount">${{ expense.amount }}</h3>
+                    <p class="description">{{ expense.description }}</p>
+                    <p class="date">({{ expense.date_posted.strftime('%Y-%m-%d') }})</p>
+                    <a class="edit-link" href="{{ url_for('main.edit_expense', id=expense.id) }}">Edit</a>
+                    <form action="{{ url_for('main.delete_expense', id=expense.id) }}" method="post" style="display:inline;">
+                        <input class="error-color" type="submit" value="Delete">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
