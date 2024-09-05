@@ -67,4 +67,31 @@
     background-color: var(--error-color);
 }
 
+@media screen and (max-width: 768px) {
+    #dashboard-content #statistical-tiles {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .statistical-tile {
+        width: 45%;
+    }
+
+    .finance-entry-item {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .statistical-tile {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .statistical-tile {
+        width: 95%;
+    }
+}
 

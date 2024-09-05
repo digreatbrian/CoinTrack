@@ -18,6 +18,7 @@
     color: var(--theme-color);
     font-size: 1.01em;
     height: 70px;
+    width: -webkit-fill-available;
 }
 
 .register-login-container form input[type=submit] {
@@ -47,7 +48,7 @@
 .register-login-container #category, #source{
     height: 100px;
     padding: 5px;
-    width: 30%;
+    width: auto;
     font-size: larger;
     border-radius: var(--border-radius);
     border: 1px solid var(--theme-opposite-color);
@@ -116,6 +117,18 @@
     font-size: 1.3rem;
     color: var(--theme-secondary-color);
     opacity: .8;
+}
+
+@media screen and (max-width: 480px) {
+    .finance-entry-item, .register-login-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .finance-entry-item {
+        width: 95%;
+    }
 }
 
 
