@@ -46,7 +46,7 @@ def edit_income(id):
 		return redirect(url_for('main.income_list'))
 	else:
 		if request.method == 'POST':
-			flash('Please make sure that all fields are provided with correct input!', 'alert-error')
+			flash('Please make sure that all fields are provided with correct input!', 'error')
 	if request.method == 'GET':
 		form.amount.data = income.amount
 		form.source.data = income.source

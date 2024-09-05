@@ -27,7 +27,7 @@ def add_expense():
 		return redirect(url_for('main.expense_list'))
 	else:
 		if request.method == 'POST':
-			flash('Please make sure that all fields are provided with correct input!', 'alert-error')
+			flash('Please make sure that all fields are provided with correct input!', 'error')
 	return render_template('add_expense.html', form=form)
 
 
@@ -46,7 +46,7 @@ def edit_expense(id):
 		return redirect(url_for('main.expense_list'))
 	else:
 		if request.method == 'POST':
-			flash('Please make sure that all fields are provided with correct input!', 'alert-error')
+			flash('Please make sure that all fields are provided with correct input!', 'error')
 	if request.method == 'GET':
 		form.amount.data = expense.amount
 		form.description.data = expense.description
