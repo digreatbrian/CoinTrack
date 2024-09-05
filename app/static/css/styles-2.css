@@ -1,0 +1,76 @@
+/* LOGIN */
+
+#login-container h2 {
+    color: var(--theme-opposite-color);
+}
+
+
+/* REGISTER or LOGIN FORM */
+
+.register-login-container h2 {
+    color: var(--theme-opposite-color);
+}
+
+.register-login-container form {
+    padding: 20px;
+    font-size: larger;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-opposite-color);
+}
+
+.register-login-container form input {
+    padding: 5px;
+    margin: 10px 5px 5px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-opposite-color);
+    background-color: var(--theme-opposite-color);
+    color: var(--theme-color);
+    font-size: 1.01em;
+    height: 60px;
+}
+
+.register-login-container form input[type=submit] {
+    background-color: var(--theme-secondary-color);
+    border:none;
+    padding: 10px 20px;
+    font-family: system-ui;
+    color: var(--theme-secondary-opposite-color)
+}
+
+.register-login-container form label {
+    padding: 5px;
+    margin: 10px 5px 5px;
+    color: var(--theme-opposite-color);
+}
+
+
+.register-login-container #description {
+    margin-top: 5px;
+}
+
+.register-login-container #category, #source{
+    height: 100px;
+    padding: 5px;
+    width: 30%;
+    font-size: larger;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-opposite-color);
+    background-color: var(--theme-opposite-color);
+}
+
+/* LOGIN FORM */
+.register-login-container#login-container form {
+    min-height: 50vh;
+}
+
+/* DASHBOARD PAGE */
+#dashboard-container {
+    color: var(--theme-secondary-opposite-color);
+}
+
+#dashboard-header {
+    background-color: var(--theme-secondary-color);
+    color: var(--theme-secondary-opposite-color);
+    padding: 20px 15vw;
+    border-radius: var(--border-radius);
+}

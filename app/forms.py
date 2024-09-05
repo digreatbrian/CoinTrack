@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, FloatField, SelectField, SubmitField
+from wtforms import StringField, PasswordField, FloatField, SelectField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
-from .models import User, Category
+from .models import User
+
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -20,27 +21,28 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('Email is already in use.')
 
+
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
 
+
 class IncomeForm(FlaskForm):
     amount = FloatField('Amount', validators=[DataRequired()])
-    source = StringField('Source', validators=[DataRequired()])
-    category = SelectField('Category', coerce=int)
+    description = TextAreaField('Description', validators=[DataRequired()])
+    source = SelectField('Source', choices=["Salary", "Business", "Gift", "Interest", "Investment", "Other"])
     submit = SubmitField('Add Income')
 
     def __init__(self, *args, **kwargs):
         super(IncomeForm, self).__init__(*args, **kwargs)
-        self.category.choices = [(category.id, category.name) for category in Category.query.all()]
+
 
 class ExpenseForm(FlaskForm):
     amount = FloatField('Amount', validators=[DataRequired()])
-    description = StringField('Description', validators=[DataRequired()])
-    category = SelectField('Category', coerce=int)
+    description = TextAreaField('Description', validators=[DataRequired()])
+    category = SelectField('Category', choices=["Food", "Transport", "Entertainment", "Health", "Education", "Other"])
     submit = SubmitField('Add Expense')
 
     def __init__(self, *args, **kwargs):
         super(ExpenseForm, self).__init__(*args, **kwargs)
-        self.category.choices = [(category.id, category.name) for category in Category.query.all()]

@@ -48,7 +48,7 @@ To install and run CoinTrack locally, follow these steps:
 
 3. **Run the Application**:
     ```bash
-    FLASK_APP=run.py FLASK_ENV=development flask run
+    FLASK_APP=__init__.py FLASK_ENV=development flask run
     ```
 
 ---
@@ -56,7 +56,7 @@ To install and run CoinTrack locally, follow these steps:
 ## 🛠️ Technologies Used
 
 - **Frontend**: CSS for now
-- **Backend**: Flask and other flask exts
+- **Backend**: Flask and other flask extensions
 - **Database**: SQLite
 
 ---
@@ -77,7 +77,7 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 ## 📧 Contact
 
-For any questions or suggestions, feel free to reach out to us at [digreatbrian@gmail.com](mailto:digreatbrian@cointrack.com) or misheckgogo@gmail.com](mailto:misheckgogo@cointrack.com.
+For any questions or suggestions, feel free to reach out to us at [digreatbrian@gmail.com](mailto:digreatbrian@cointrack.com) or [misheckgogo@gmail.com](mailto:misheckgogo@cointrack.com).
 
 ---
 

@@ -1,20 +1,25 @@
 {% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/finance_entry.css') }}">
+{% endblock %}
 {% block content %}
-<h2>Add Expense</h2>
-<form method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.amount.label }}<br>
-        {{ form.amount(size=32) }}
-    </p>
-    <p>
-        {{ form.description.label }}<br>
-        {{ form.description(size=32) }}
-    </p>
-    <p>
-        {{ form.category.label }}<br>
-        {{ form.category() }}
-    </p>
-    <p>{{ form.submit() }}</p>
-</form>
+    <div id="add-expense-container" class="register-login-container big-form-container">
+        <h2>Add Expense</h2>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.amount.label }}<br>
+                {{ form.amount(size=32, placeholder="Enter amount") }}
+            </p>
+            <p>
+                {{ form.category.label }}<br>
+                {{ form.category() }}
+            </p>
+            <p>
+                {{ form.description.label }}<br>
+                {{ form.description(size=255, placeholder="Enter description, max: 255 chars") }}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
 {% endblock %}

@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Register</h2>
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    <div>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}<br>
-        {{ form.email.label }}<br>
-        {{ form.email(size=32) }}<br>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
-        {{ form.confirm_password.label }}<br>
-        {{ form.confirm_password(size=32) }}<br>
+    <div class="register-login-container">
+        <h2 class="text-center">Register</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32, placeholder="Enter username") }}<br>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32, placeholder="Enter email") }}<br>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32, placeholder="Enter password") }}<br>
+                {{ form.confirm_password.label }}<br>
+                {{ form.confirm_password(size=32, placeholder="Confirm password") }}<br>
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
     </div>
-    <div>
-        {{ form.submit() }}
-    </div>
-</form>
 {% endblock %}
