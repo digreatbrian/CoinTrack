@@ -7,13 +7,13 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- Technologies-Used
-- Features
-- Installation
-- Usage
-- Contributing
-- Demo
-- License
+- [Technologies-Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Demo](demo)
+- [License](license)
 
 ## Overview
 
@@ -21,7 +21,7 @@ CoinTrack is a powerful and intuitive personal finance tracker designed to help 
 
 ## Technologies-Used
 
-The CoinTrack project utilizes the following technologies and tools:
+The **CoinTrack** project utilizes the following technologies and tools:
 
 - __Flask__: A lightweight web application framework for Python.
 - __Object-Oriented Programming (OOP)__: Utilized for efficient code organization and maintainability.
