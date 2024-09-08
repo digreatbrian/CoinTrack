@@ -1,4 +1,4 @@
-# ALX WEB-Stack Portfolio: CoinTrack
+![image](https://github.com/user-attachments/assets/75b24856-e0a2-469e-99f6-aadff25e5e41)# ALX WEB-Stack Portfolio: CoinTrack
 
 ![CoinTrack Logo](https://via.placeholder.com/728x90.png?text=CoinTrack+Logo)
 
@@ -96,12 +96,17 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 1. Misheck Gogo [Github](https://github.com/MisheckGalx) | [Linkedin](https://www.linkedin.com/in/misheckgogo/) | [Twitter](https://twitter.com/kingboris28)
 
-2. Brian Musakwa
+2. Brian Musakwa [Github](https://github.com/digreatbrian) | [Linkedin](https://www.linkedin.com/in/digreatbrian/) | [Twitter](digreatbrian)
+
 3. Brendon Jeje [Github](https://github.com/Brendon45) | [Linkedin](https://www.linkedin.com/in/brendonjeje/) | [Twitter](https://twitter.com/brendon4545)
 
-
 ---
+## License
 
+- This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+  
 ## ⭐️ Show Your Support
 
 If you like CoinTrack, please give us a ⭐️ on [GitHub](https://github.com/digreatbrian/CoinTrack.git)!
+
+![THEGREAT](https://private-user-images.githubusercontent.com/125453474/259838372-ab3c1e01-2b98-47ae-96b7-37c07c85a2f1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4MjYyMjUsIm5iZiI6MTcyNTgyNTkyNSwicGF0aCI6Ii8xMjU0NTM0NzQvMjU5ODM4MzcyLWFiM2MxZTAxLTJiOTgtNDdhZS05NmI3LTM3YzA3Yzg1YTJmMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkwOFQyMDA1MjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMWI1ZjE0YzM4MzFlMWMwYTZlZDMzMzU1YWEzOTM3YzIwNGMxZTRhOGJlZjY5YzJjZWM3NThhNDg4OGM2NTJiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.c587Byu_wgWd0KDVGTD6OrCFVtO6d8tDRfpiT7ZpNrY)
