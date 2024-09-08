@@ -112,4 +112,3 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 ## ⭐️ Show Your Support
 
 If you like CoinTrack, please give us a ⭐️ on [GitHub](https://github.com/digreatbrian/CoinTrack.git)!
-![THEGREAT](https://github.com/elyse502/AirBnB_clone/assets/125453474/ab3c1e01-2b98-47ae-96b7-37c07c85a2f1)
