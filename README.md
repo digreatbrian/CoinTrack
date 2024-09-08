@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/75b24856-e0a2-469e-99f6-aadff25e5e41)# ALX WEB-Stack Portfolio: CoinTrack
+# ALX WEB-Stack Portfolio: CoinTrack
 
 ![CoinTrack Logo](https://via.placeholder.com/728x90.png?text=CoinTrack+Logo)
 
