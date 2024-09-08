@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- Overview
+- [Overview](#overview)
 - Technologies-Used
 - Features
 - Installation
@@ -78,7 +78,11 @@ To install and run CoinTrack locally, follow these steps:
 Soon live demo will be previewed here!
 ---
 
-## 🌟 Features Coming Soon
+## 🌟 Future Enhancements
+
+        🚧This project is still a work in progress!
+        
+📍There are still many elements that are under development and we wish to implement them into our CoinTrack project. Stay tuned for more updates coming soon. 🍿📺🍿
 
 - **Budget Tracking**: Set and track your monthly budgets.
 - **Expense Forecasting**: Predict future expenses based on historical data.
@@ -108,5 +112,4 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 ## ⭐️ Show Your Support
 
 If you like CoinTrack, please give us a ⭐️ on [GitHub](https://github.com/digreatbrian/CoinTrack.git)!
-
 ![THEGREAT](https://github.com/elyse502/AirBnB_clone/assets/125453474/ab3c1e01-2b98-47ae-96b7-37c07c85a2f1)
