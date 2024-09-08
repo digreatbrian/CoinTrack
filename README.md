@@ -4,7 +4,35 @@
 
 ## 📈 Your Personal Finance Tracker 📊
 
-CoinTrack is a powerful and intuitive personal finance tracker designed to help you manage your income and expenses efficiently. With CoinTrack, you can easily keep track of your financial transactions, categorize your spending, and visualize your financial data through insightful charts.
+## Table of Contents
+
+- Overview
+- Technologies-Used
+- Features
+- Installation
+- Usage
+- Contributing
+- Demo
+- License
+
+## Overview
+
+CoinTrack is a powerful and intuitive personal finance tracker designed to help you manage your income and expenses efficiently. With CoinTrack, you can easily keep track of your financial transactions, categorize your spending, and visualize your financial data through insightful charts.The project demonstrates proficiency in backend development and serves as a showcase of Full Stack Software Engineering skills.
+
+## Technologies-Used
+
+The CoinTrack project utilizes the following technologies and tools:
+
+- __Flask__: A lightweight web application framework for Python.
+- __Object-Oriented Programming (OOP)__: Utilized for efficient code organization and maintainability.
+- __Flask-Login__: A Flask extension for managing user sessions and authentication.
+- __HTML__: The standard markup language for creating web pages and applications.
+- __CSS__: Cascading Style Sheets for styling HTML elements and enhancing the visual presentation.
+- __Git__: A version control system for tracking changes in the project codebase.
+- __GitHub__: A platform for hosting and collaborating on Git repositories.
+
+These technologies collectively enable the development of a robust and user-friendly web application for managing notes effectively.
+
 
 ---
 
@@ -14,20 +42,6 @@ CoinTrack is a powerful and intuitive personal finance tracker designed to help 
 - **Custom Categories**: Organize your spending with customizable categories.
 - **Insightful Charts**: Visualize your income and expenses with interactive charts.
 - **Secure and Private**: Your data is stored securely and is only accessible to you.
-
----
-
-## 🖥️ Demo
-
-Soon live demo will be previewed here!
----
-
-## 📚 How to Use
-
-1. **Sign Up**: Create an account to start tracking your finances.
-2. **Add Transactions**: Enter your income and expenses to keep track.
-3. **Categorize**: Assign categories to your transactions for better organization.
-4. **Analyze**: Use the charts and reports to understand your spending habits.
 
 ---
 
@@ -51,14 +65,17 @@ To install and run CoinTrack locally, follow these steps:
     FLASK_APP=__init__.py FLASK_ENV=development flask run
     ```
 
+## 📚 Usage
+
+1. **Sign Up**: Create an account to start tracking your finances.
+2. **Add Transactions**: Enter your income and expenses to keep track.
+3. **Categorize**: Assign categories to your transactions for better organization.
+4. **Analyze**: Use the charts and reports to understand your spending habits.
+
 ---
+## 🖥️ Demo
 
-## 🛠️ Technologies Used
-
-- **Frontend**: CSS for now
-- **Backend**: Flask and other flask extensions
-- **Database**: SQLite
-
+Soon live demo will be previewed here!
 ---
 
 ## 🌟 Features Coming Soon
@@ -75,9 +92,12 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 
 ---
 
-## 📧 Contact
+## AUTHORS✒️
 
-For any questions or suggestions, feel free to reach out to us at [digreatbrian@gmail.com](mailto:digreatbrian@cointrack.com) or [misheckgogo45@gmail.com](mailto:misheckgogo45@gmail.com)
+1. Misheck Gogo [Github](https://github.com/MisheckGalx) | [Linkedin](https://www.linkedin.com/in/misheckgogo/) | [Twitter](https://twitter.com/kingboris28)
+
+2. Brian Musakwa
+3. Brendon Jeje [Github](https://github.com/Brendon45) | [Linkedin](https://www.linkedin.com/in/brendonjeje/) | [Twitter](https://twitter.com/brendon4545)
 
 
 ---
