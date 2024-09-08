@@ -1,4 +1,4 @@
-# CoinTrack
+# ALX WEB-Stack Portfolio: CoinTrack
 
 ![CoinTrack Logo](https://via.placeholder.com/728x90.png?text=CoinTrack+Logo)
 
