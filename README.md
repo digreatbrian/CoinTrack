@@ -26,6 +26,7 @@ The **CoinTrack** project utilizes the following technologies and tools:
 - __Flask__: A lightweight web application framework for Python.
 - __Object-Oriented Programming (OOP)__: Utilized for efficient code organization and maintainability.
 - __Flask-Login__: A Flask extension for managing user sessions and authentication.
+- __Jinja__: The most popular template engine for Python projects.
 - __HTML__: The standard markup language for creating web pages and applications.
 - __CSS__: Cascading Style Sheets for styling HTML elements and enhancing the visual presentation.
 - __Git__: A version control system for tracking changes in the project codebase.
