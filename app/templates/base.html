@@ -18,7 +18,10 @@
 <body>
     <main id="main">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">CoinTrack</a>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                <img src="{{ url_for('static', filename='images/favicon.png') }}" alt="CoinTrack Logo" style="height: 25px; margin-right: 0;">
+                <span class="cointrack-text">CoinTrack</span> <!-- Added a span with class -->
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">menu</span>
             </button>
