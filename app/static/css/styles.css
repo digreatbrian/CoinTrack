@@ -111,13 +111,19 @@ main#main {
 }
 
 #introduction {
-    opacity: .65;
-    padding: 5px;
-    border: 1px solid var(--theme-opposite-color);
-    border-radius: var(--border-radius);
-    text-shadow: #191a19;
-}
+        background-color: #1b1b1b; /* Set background color to black */
+        color: white; /* Set text color to white for contrast */
+        padding: 5px;
+        border: 1px solid var(--theme-opposite-color);
+        border-radius: var(--border-radius);
+        opacity: 1; /* Ensure full opacity */
+    }
 
+.cointrack-text {
+        color: #FFD700; /* Gold color */
+        font-weight: bold; /* Optional: make the text bold */
+    }
+    
 #login-register-buttons {
     display: flex;
     justify-content: center;
