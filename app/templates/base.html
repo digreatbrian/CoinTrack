@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
@@ -57,6 +58,31 @@
             {% endwith %}
             <div id="content">{% block content %}{% endblock %}</div>
         </div>
+
+        <!-- About Section -->
+        <div id="about" class="container about my-5">
+            <h2 class="text-center mb-4">MEET THE DEVELOPER TEAM</h2>
+            <p>CoinTrack was inspired by the need for financial literacy and empowerment. Our team aims to create an intuitive tool that simplifies financial tracking, making it accessible and engaging for everyone. Driven by personal experiences with financial challenges, we aspire to help users gain control over their finances while educating them to make informed decisions. Together, we envision a community of financially savvy individuals supporting each other on their journeys.</p>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="https://avatars.githubusercontent.com/u/136022287?v=4" alt="Misheck Gogo">
+                    <h4>Misheck Gogo</h4>
+                    <p><a href="https://www.linkedin.com/in/misheckgogo/">LinkedIn</a> | <a href="https://github.com/MisheckGalx">GitHub</a> | <a href="https://twitter.com/kingboris28">Twitter</a></p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://avatars.githubusercontent.com/u/137000164?v=4" alt="Brendon Jeje">
+                    <h4>Brendon Jeje</h4>
+                    <p><a href="https://www.linkedin.com/in/brendonjeje/">LinkedIn</a> | <a href="https://github.com/Brendon45">GitHub</a> | <a href="https://twitter.com/brendon4545">Twitter</a></p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHSARC9eWiQrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1716216270683?e=1732147200&v=beta&t=keSodkHLZMUvBnTylHdOXs61cOx4wRGsEp8M8kdzFTg" alt="Brian Musakwa">
+                    <h4>Brian Musakwa</h4>
+                    <p><a target="_blank" href="https://linkedin.com/in/digreatbrian">LinkedIn</a> | <a href="https://github.com/digreatbrian">GitHub</a> | <a href="https://facebook.com/digreatbrian">Twitter</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </main>
     <footer class="footer text-center py-3">
         <div class="container">
