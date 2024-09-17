@@ -5,7 +5,7 @@
 ## 📈 Your Personal Finance Tracker 📊
 
 
-## [Google slides] (https://docs.google.com/presentation/d/1yYejh0YsBnIrLruQAICkP3kHjIo-5MG16jAJo5MfBKY/edit?usp=sharing)
+[Google slides](https://docs.google.com/presentation/d/1yYejh0YsBnIrLruQAICkP3kHjIo-5MG16jAJo5MfBKY/edit?usp=sharing)
 ## Table of Contents
 
 - [Overview](#overview)
