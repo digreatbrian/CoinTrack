@@ -8,16 +8,18 @@
 
 - [Overview](#overview)
 - [Technologies-Used](#technologies-used)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Structure](structure)
+- [Components](components)
+- [Features](features)
+- [Installation](installation)
+- [Usage](usage)
+- [Contribution](contribution)
 - [Demo](demo)
 - [License](license)
 
 ## Overview
 
-CoinTrack is a powerful and intuitive personal finance tracker designed to help you manage your income and expenses efficiently. With CoinTrack, you can easily keep track of your financial transactions, categorize your spending, and visualize your financial data through insightful charts.The project demonstrates proficiency in backend development and serves as a showcase of Full Stack Software Engineering skills.
+**CoinTrack** is a powerful and intuitive personal finance tracker designed to help you manage your income and expenses efficiently. With CoinTrack, you can easily keep track of your financial transactions, categorize your spending, and visualize your financial data through insightful charts.The project demonstrates proficiency in backend development and serves as a showcase of Full Stack Software Engineering skills.
 
 ## Technologies-Used
 
@@ -26,17 +28,124 @@ The **CoinTrack** project utilizes the following technologies and tools:
 - __Flask__: A lightweight web application framework for Python.
 - __Object-Oriented Programming (OOP)__: Utilized for efficient code organization and maintainability.
 - __Flask-Login__: A Flask extension for managing user sessions and authentication.
-- __Jinja__: The most popular template engine for Python projects.
+- __Jinja2__: The most popular template engine for Python projects.
+- __Bootstrap__: A front-end framework for designing responsive and mobile-first websites.
 - __HTML__: The standard markup language for creating web pages and applications.
 - __CSS__: Cascading Style Sheets for styling HTML elements and enhancing the visual presentation.
 - __Git__: A version control system for tracking changes in the project codebase.
 - __GitHub__: A platform for hosting and collaborating on Git repositories.
 
-These technologies collectively enable the development of a robust and user-friendly web application for managing notes effectively.
+These technologies collectively enable the development of a ``robust`` and ``user-friendly`` web application for managing notes effectively.
 
+## Structure
 
----
+Here is the Structure of the **CoinTrack** App:
 
+    ~/CoinTrack master                                                                                                    Ruby 3.3.0 root@DESKTOP-QN4FMQ0 23:20:08 ─╮
+    ❯ ls                                                                                                                                                           ─╯
+       AUTHORS        README.md          app/                config.py         requirements.txt        tests/
+       LICENSE        __pycache__/       cointrack.db        migrations/       run.py                  venv/
+
+    ~/CoinTrack master                                                                                                    Ruby 3.3.0 root@DESKTOP-QN4FMQ0 23:20:09 ─╮
+    ❯ tree -I venv
+    .
+    ├── AUTHORS
+    ├── LICENSE
+    ├── README.md
+    ├── __pycache__
+    │   └── config.cpython-310.pyc
+    ├── app
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-310.pyc
+    │   │   ├── forms.cpython-310.pyc
+    │   │   ├── models.cpython-310.pyc
+    │   │   ├── routes.cpython-310.pyc
+    │   │   ├── setup.cpython-310.pyc
+    │   │   └── utils.cpython-310.pyc
+    │   ├── forms.py
+    │   ├── models.py
+    │   ├── routes.py
+    │   ├── setup.py
+    │   ├── static
+    │   │   ├── css
+    │   │   │   ├── finance_entry.css
+    │   │   │   ├── styles-2.css
+    │   │   │   ├── styles.css
+    │   │   │   └── styles3.css
+    │   │   └── images
+    │   │       ├── bg1.jpg
+    │   │       ├── bg2.jpg
+    │   │       ├── bg3.jpg
+    │   │       ├── bg4.jpg
+    │   │       ├── coinlogo.jpg
+    │   │       ├── cointrack.png
+    │   │       └── favicon.png
+    │   ├── templates
+    │   │   ├── add_expense.html
+    │   │   ├── add_income.html
+    │   │   ├── base.html
+    │   │   ├── dashboard.html
+    │   │   ├── edit_expense.html
+    │   │   ├── edit_income.html
+    │   │   ├── expense_list.html
+    │   │   ├── income_list.html
+    │   │   ├── index.html
+    │   │   ├── login.html
+    │   │   └── register.html
+    │   ├── utils.py
+    │   └── views
+    │       ├── __init__.py
+    │       ├── __pycache__
+    │       │   ├── __init__.cpython-310.pyc
+    │       │   ├── dashboard.cpython-310.pyc
+    │       │   ├── expense.cpython-310.pyc
+    │       │   ├── home.cpython-310.pyc
+    │       │   ├── income.cpython-310.pyc
+    │       │   ├── login.cpython-310.pyc
+    │       │   ├── logout.cpython-310.pyc
+    │       │   └── register.cpython-310.pyc
+    │       ├── dashboard.py
+    │       ├── expense.py
+    │       ├── home.py
+    │       ├── income.py
+    │       ├── login.py
+    │       ├── logout.py
+    │       └── register.py
+    ├── cointrack.db
+    ├── config.py
+    ├── migrations
+    │   ├── README
+    │   ├── alembic.ini
+    │   ├── env.py
+    │   └── script.py.mako
+    ├── requirements.txt
+    ├── run.py
+    └── tests
+    └── test_app.py
+
+    11 directories, 63 files
+
+## Components
+
+The project consists of the following components:
+
+- `.idea/`: Project-specific settings and configuration files for the IDE.
+    - `app/`: Core application code for CoinTrack.
+      - `static/`: Contains static files like CSS, JavaScript, and images.
+      - `templates/`: HTML templates for rendering views.
+      - `views/`: Contains Python files managing the logic for rendering views and handling requests.
+  - `migrations/`: Database migration files to keep track of changes in the database schema.
+        - `tests/`: Unit and integration tests for ensuring the correctness of the application.
+      - `venv/`: Virtual environment for managing dependencies locally.
+        - `.gitignore`: Specifies files and directories Git should ignore.
+    - `AUTHORS`: A list of contributors to the project.
+        - `LICENSE`: The project's license (MIT License).
+    - `README.md`: A file describing the project and its usage.
+        - `config.py`: Configuration settings for the application.
+    - `requirements.txt`: Lists all dependencies needed to run the project.
+    - `run.py`: The main script to start the application.
+      
 ## 🚀 Features
 
 - **Easy Transaction Management**: Quickly add, edit, and delete transactions.
@@ -91,7 +200,7 @@ Soon live demo will be previewed here!
 
 ---
 
-## 📝 Contributing
+## 📝 Contribution
 
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
