@@ -27,6 +27,7 @@
     color: var(--theme-color);
     font-size: 1.01em;
     height: 60px;
+    width: 100%;
 }
 
 .register-login-container form input[type=submit] {
@@ -74,3 +75,16 @@
     padding: 20px 15vw;
     border-radius: var(--border-radius);
 }
+
+@media screen and (max-width: 768px) {
+    .register-login-container {
+        width: 97vw;
+    }
+
+    .register-login-container input {
+        font-size: .7em;
+        margin-left: 1px;
+    }
+    
+}
+
