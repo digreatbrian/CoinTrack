@@ -188,7 +188,23 @@ ul {
 }
 
 @media (max-width: 768px) {
-    #description {
-        width: 95%;
+    #content-container {
+        margin: 0px;
+        padding: 2px;
     }
+
+    #content {
+        width: 96%;
+        margin: auto;
+    }
+
+    #login-register-buttons {
+       margin-top: 10vh;
+    }
+
+    #description {
+        margin-top: 10vh;
+        width: 100%;
+    }
+    
 }
