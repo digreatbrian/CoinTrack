@@ -1,0 +1,31 @@
+.about {
+    border-radius: 0.5%;
+    background-color: #1b1b1b; /* Dark gray background */
+    color: #ffffff; /* White text color for contrast */
+    padding: 40px; /* Added padding for better spacing */
+}
+
+.about img {
+    max-width: 150px; /* Max width for images */
+    border-radius: 50%; /* Makes the image circular */
+}
+
+.about p {
+    text-align: center; /* Centers text in paragraphs */
+    color: #ffffff; /* White text color for visibility */
+}
+
+.about h2 {
+    font-size: 2rem; /* Font size for the h2 heading */
+    color: #ffffff; /* White text color for visibility */
+}
+
+.about .row {
+    padding: 2%; /* Padding for the row */
+}
+
+.text-center h4 {
+    padding: 2px; /* Padding for h4 elements in the text-center class */
+    font-weight: 600; /* Bold font weight */
+    color: #ffffff; /* White text color for visibility */
+}
