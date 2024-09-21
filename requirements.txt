@@ -18,3 +18,4 @@ SQLAlchemy==1.4.53
 typing_extensions==4.12.2
 Werkzeug==2.0.0
 WTForms==3.1.2
+python-dotenv==1.0.1
