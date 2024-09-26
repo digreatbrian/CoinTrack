@@ -175,7 +175,7 @@ To install and run CoinTrack locally, follow these steps:
 
 3. **Run the Application**:
     ```bash
-    FLASK_APP=__init__.py FLASK_ENV=development flask run
+    FLASK_APP=run.py FLASK_ENV=development flask run
     ```
 
 ## 📚 Usage
